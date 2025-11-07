@@ -1,63 +1,69 @@
-<div align="center">
-  <img height="150" src="https://user-images.githubusercontent.com/74038190/212747919-84b68444-0d81-46db-a338-7ec50e9dd4cd.gif"  />
-</div>
+# Kidney Disease Prediction
 
-###
+A machine learning model that predicts chronic kidney disease using patient medical data.
 
-<div align="center">
-  <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"  />
-  <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="instagram logo"  />
-  <img src="https://img.shields.io/static/v1?message=Twitter&logo=twitter&label=&color=1DA1F2&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="twitter logo"  />
-</div>
+## 📋 About
 
-###
+This project uses Random Forest classification to predict chronic kidney disease based on clinical parameters. The model processes 18 key medical features to provide accurate predictions.
 
-<div align="center">
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=sparshgoyal2701.sparshgoyal2701&"  />
-</div>
+## 🚀 Features
 
-###
+- Data preprocessing & cleaning
+- Feature selection and engineering
+- Random Forest classifier
+- Model serialization with pickle
+- 100% accuracy on test data
 
-<h1 align="center">hey there 👋</h1>
+## 🛠️ Installation
 
-###
+```bash
+pip install numpy pandas matplotlib seaborn scikit-learn
+```
 
-<h3 align="left">👩‍💻  About Me</h3>
+## 💻 Usage
 
-###
+```python
+import pickle
+import pandas as pd
 
-<p align="left">I am a software developer named Sparsh Goyal.<br><br>🔭 I am employed as a student.<br>📚 I am studying DSA right now.<br>- ➷ While I am free, I work out.</p>
+# Load model
+model = pickle.load(open('kidney.pkl', 'rb'))
 
-###
+# Make prediction
+sample_data = {
+    'age': [48.0], 'bp': [70.0], 'al': [4.0], 'su': [0.0],
+    'rbc': [0], 'pc': [1], 'pcc': [1], 'ba': [0],
+    'bgr': [117.0], 'bu': [56.0], 'sc': [3.8], 'pot': [4.6],
+    'wc': [6700], 'htn': [1], 'dm': [0], 'cad': [0],
+    'pe': [1], 'ane': [1]
+}
 
-<h3 align="left">🛠 Language and tools</h3>
+sample_df = pd.DataFrame(sample_data)
+prediction = model.predict(sample_df)
+print("CKD" if prediction[0] == 1 else "No CKD")
+```
 
-###
+## 📊 Model Features
 
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="python logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" height="40" alt="flask logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="html5 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" alt="css3 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" height="40" alt="opencv logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" height="40" alt="jupyter logo"  />
-</div>
+- **Demographic**: age, bp
+- **Urine Tests**: al, su
+- **Blood Tests**: bgr, bu, sc, pot, wc
+- **Medical History**: htn, dm, cad
+- **Symptoms**: rbc, pc, pcc, ba, pe, ane
 
-###
+## 📁 Files
 
-<h3 align="left">🔥   My Stats :</h3>
+- `kidney_disease.csv` - Dataset
+- `kidney.pkl` - Trained model
+- `kidney_prediction.ipynb` - Main code
 
-###
+## ⚠️ Note
 
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=sparshgoyal2701&locale=en&mode=daily&theme=dark&hide_border=false&border_radius=5&order=3" height="220" alt="streak graph"  />
-</div>
+Perfect accuracy may indicate overfitting. For medical use, consult healthcare professionals and validate with larger datasets.
 
-###
+## 📄 License
+
+Educational use only.
+```
+
+This shorter version keeps all the essential information while being much more concise and easier to read quickly!
