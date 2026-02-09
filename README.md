@@ -1,4 +1,4 @@
-# Kidney Disease Prediction
+# Chronic Kidney Disease Prediction
 
 A machine learning model that predicts chronic kidney disease using patient medical data.
 
